@@ -1,41 +1,248 @@
+/* Color Scheme 
 
+bg: teal / "zomp" #3AA78A
+Main Font: brown/ "Dark Liver horse" #523A34
+logo 1/accent 1: red brown/"Brown Sugar" #B86E4B
+logo 2/accent 2: yellow/"Sunray" #E5B25D*/
+
+/* All into flex-box */
+* {
+  font-family: "calibri", sans-serif; 
+  color: #523A34
+}
+
+/* All body */
 body {
-    background: rgba(229, 178, 93, 0.7);
+  display:flex;  
+  background: rgba(58, 167, 138, 0.7);
+  justify-content:center;
+  text-align: center;
+  margin-left: 150px;
+  margin-right: 30px;
+  flex-direction: column;
 }
 
 
 
+/* home section */
+.home {
+
+}
+/* About Me section */
+.aboutMe {
+
+}
+
+/* Education section */
+.education {
+
+}
 
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: #523A34;
-    overflow: hidden;
-    border-radius: 1.25rem;
+/* Projects section */
+.projects {
+
+}
+
+/* Contacts section */
+.contacts {
+
+}
+
+/* Add a background color to the side navigation */
+.sidenav {
+  background-color: #E5B25D;
+  border-radius: 1.25rem;
+  height: 100%; /* Full-height */
+  width: 120px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+
   }
   
   /* Style the links inside the navigation bar */
-  .topnav a {
+  .sidenav a {
     float: left;
-    color: #f2f2f2;
+    color: #523A34;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
   }
-  .topnav p {
-    color: white;
+
+   /* Style the p text inside the navigation bar */
+  .sidenav p {
+    color: #523A34;
     text-align: right;
     margin: 1rem;
   }
   /* Change the color of links on hover */
-  .topnav a:hover {
+  .sidenav a:hover {
     background-color: #ddd;
     color: #523A34;
   }
   
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #3AA78A;
-    color: white;
+
+
+
+/* Timeline*/
+  * {
+    box-sizing: border-box;
   }
+  
+  /* Set a background color */
+  body {
+    background-color: #3AA78A;
+    font-family: Helvetica, sans-serif;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #523A34;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: #E5B25D;
+    border: 4px solid #523A34;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color:  #E5B25D;
+    position: relative;
+    border-radius: 6px;
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 31px;
+    }
+  
+  /* Full-width containers */
+    .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+      left: 60px;
+      border: medium solid  #E5B25D;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent  #E5B25D transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      left: 15px;
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+    }
+  }
+
+
+  /* Project Cards */
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 #523A34; /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #E5B25D;
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Project Buttons */
+.button {
+  background-color: #523A34;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+}
